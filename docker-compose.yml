@@ -1,0 +1,16 @@
+version: "2"
+services:
+  nerves:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./nerves:/root/nerves
+      - ./purple_bbb:/root/purple_bbb
+      - /dev/sdb:/dev/sdb
+      - ~/.nerves/:/root/.nerves
+      - ~/.ssh/:/tmp/.ssh
+    env_file: .env
+    privileged: true
+    stdin_open: true
+    working_dir: /root/nerves

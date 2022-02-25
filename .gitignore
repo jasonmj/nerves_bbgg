@@ -1,0 +1,12 @@
+# Ignore .fetch files in case you like to edit your project deps locally.
+/.fetch
+
+# If the VM crashes, it generates a dump, let's ignore it too.
+erl_crash.dump
+
+# Ignore the build output
+_build/
+
+# Ignore environment variables
+.env
+.envrc
