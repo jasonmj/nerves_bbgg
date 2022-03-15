@@ -39,22 +39,24 @@ defmodule Bbgg.MixProject do
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.11.6", targets: @all_targets},
       {:nerves_pack, "~> 0.6.0", targets: @all_targets},
+      {:vintage_net_qmi, "~> 0.3.0", targets: @all_targets},
 
       # Dependencies for specific targets
       # NOTE: It's generally low risk and recommended to follow minor version
       # bumps to Nerves systems. Since these include Linux kernel and Erlang
       # version updates, please review their release notes in case
       # changes to your application are needed.
-      {:nerves_system_rpi, "~> 1.18", runtime: false, targets: :rpi},
-      {:nerves_system_rpi0, "~> 1.18", runtime: false, targets: :rpi0},
-      {:nerves_system_rpi2, "~> 1.18", runtime: false, targets: :rpi2},
-      {:nerves_system_rpi3, "~> 1.18", runtime: false, targets: :rpi3},
-      {:nerves_system_rpi3a, "~> 1.18", runtime: false, targets: :rpi3a},
-      {:nerves_system_rpi4, "~> 1.18", runtime: false, targets: :rpi4},
-      {:nerves_system_bbb, "~> 2.13", runtime: false, targets: :bbb},
-      {:purple_bbb, path: "../purple_bbb", runtime: false, targets: :purple_bbb, nerves: [compile: true]},
-      {:nerves_system_osd32mp1, "~> 0.9", runtime: false, targets: :osd32mp1},
-      {:nerves_system_x86_64, "~> 1.18", runtime: false, targets: :x86_64}
+      {:nerves_system_rpi, "~> 1.18.3", runtime: false, targets: :rpi},
+      {:nerves_system_rpi0, "~> 1.18.3", runtime: false, targets: :rpi0},
+      {:nerves_system_rpi2, "~> 1.18.3", runtime: false, targets: :rpi2},
+      {:nerves_system_rpi3, "~> 1.18.3", runtime: false, targets: :rpi3},
+      {:nerves_system_rpi3a, "~> 1.18.3", runtime: false, targets: :rpi3a},
+      {:nerves_system_rpi4, "~> 1.18.3", runtime: false, targets: :rpi4},
+      {:nerves_system_bbb, "~> 2.13.3", runtime: false, targets: :bbb},
+      {:purple_bbb,
+       path: "../purple_bbb", runtime: false, targets: :purple_bbb, nerves: [compile: true]},
+      {:nerves_system_osd32mp1, "~> 0.9.3", runtime: false, targets: :osd32mp1},
+      {:nerves_system_x86_64, "~> 1.18.3", runtime: false, targets: :x86_64}
     ]
   end
 
