@@ -58,7 +58,32 @@ config :vintage_net,
        type: VintageNetEthernet,
        ipv4: %{method: :dhcp}
      }},
-    {"wlan0", %{type: VintageNetWiFi}}
+    {"wlan0",
+     %{
+       type: VintageNetWiFi,
+       ipv4: %{method: :dhcp},
+       vintage_net_wifi: %{
+         networks: [
+           %{
+             key_mgmt: :wpa_psk,
+             psk: System.get_env("WPA_PSK"),
+             ssid: System.get_env("WPA_SSID"),
+             priority: 75
+           }
+         ]
+       }
+     }},
+    {
+      "wwan0",
+      %{
+        type: VintageNetQMI,
+        vintage_net_qmi: %{
+          service_providers: [
+            %{apn: System.get_env("LTE_APN")}
+          ]
+        }
+      }
+    }
   ]
 
 config :mdns_lite,
